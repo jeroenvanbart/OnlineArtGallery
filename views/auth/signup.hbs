@@ -1,0 +1,54 @@
+<h2>Signup</h2>
+
+<form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
+
+  <div>
+    <label for="fullName">Full Name</label>
+    <input id="fullName" type="text" name="fullName" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" required>
+  </div>
+
+     <div>
+    <label for="bio">bio</label>
+    <textarea id="bio" name="bio" id="bio" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+    <label for="usertype">usertype</label>
+    <select id="usertype" name="usertype" required>
+    <option value="user">user</option>
+    <option value="artist">artist</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="profileImgUrl">Upload profile Image</label>
+    <input id="profileImgUrl" type="file" name="profileImgUrl" required >
+  </div>
+
+
+  {{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
+
+  
+
+  <div>
+    <button>Create account</button>
+  </div>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/login">Login</a>
+  </p>
+
+</form>

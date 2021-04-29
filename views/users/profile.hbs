@@ -1,0 +1,21 @@
+<section>
+  <h1>Hello {{user.fullName}} !</h1>
+  <div class="profileimage">
+    <img src={{user.profileImgUrl}} alt="">
+ 
+  </div>
+
+  <p>{{user.bio}}</p>
+</section>
+
+
+<section class="artimage">
+    {{#each artarr}}
+    
+    <h4>{{this.title}}</h4>
+    
+    <img src="{{this.imageUrl}}" alt="">
+  
+    {{/each}}
+</section>
+ 

@@ -1,0 +1,29 @@
+<h2>Create Room</h2>
+
+<form action="/create-art" method="POST" id="form-container" enctype="multipart/form-data">
+
+  <div>
+    <label for="title">Art Name</label>
+    <input id="title" type="text" name="title" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" id="" cols="30" rows="10" required></textarea>
+  </div>
+
+ <div>
+    <label for="imageUrl">Upload profile Image</label>
+    <input id="imageUrl" type="file" name="imageUrl" required >
+  </div>
+
+  {{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
+
+
+  <div>
+    <button>Create Art</button>
+  </div>
+
+</form>

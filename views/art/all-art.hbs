@@ -1,0 +1,45 @@
+<section>
+  <h1>All Art </h1>
+  {{#each art}}
+  <article>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+    <div class="artimage">
+        <img src={{imageUrl}} alt="">
+    </div>
+
+    <br>
+
+    <a href="/art/{{id}}">See Details</a>
+
+    {{#if isOwner}}
+    <a href="/art/{{id}}/edit">Edit Art</a>
+    <form action="/art/{{id}}/delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+    
+    
+
+    {{#if contact}}
+    <div>
+      <h3>All reviews for this room</h3>
+      <ul>
+        {{#each contact}}
+        <li>
+          <div>
+            <p>{{this.contact}}</p>
+            <p>Written by: {{this.user.fullName}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+      <hr>
+    </div>
+    {{else}}
+    <h3>There are no reviews for this art yet!</h3>
+    {{/if}}
+
+  </article>
+  {{/each}}
+</section>
