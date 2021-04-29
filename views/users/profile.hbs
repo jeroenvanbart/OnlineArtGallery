@@ -1,20 +1,33 @@
 <section>
-  <h1>Hello {{user.fullName}} !</h1>
+  <h1>{{user.fullName}}</h1>
   <div class="profileimage">
     <img src={{user.profileImgUrl}} alt="">
- 
+    <a href="/users/{{user.id}}/edit-profile-picture">Change Profile Pictue</a>
+    <p>{{user.bio}}</p>
   </div>
 
-  <p>{{user.bio}}</p>
+  
 </section>
 
+  {{!-- {{#if user.isOwner}} --}}
+  <div>
+  <a href="/users/{{user.id}}/edit-profile">Edit Profile name and bio</a>
+  <hr>
+  </div>
+  {{!-- {{/if}} --}}
 
 <section class="artimage">
+<h2>My Gallery</h2>
     {{#each artarr}}
     
     <h4>{{this.title}}</h4>
+    <p> {{this.description}}
     
     <img src="{{this.imageUrl}}" alt="">
+    <a href="/art/{{id}}/edit">Edit Art</a>
+    <form action="/art/{{id}}/delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
   
     {{/each}}
 </section>

@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
-const Review = require("../models/Contact.model");
-const Room = require("../models/Art.model");
+const Contact = require("../models/Contact.model");
+const Art = require("../models/Art.model");
 
 router.post("/art/:artId/add-contact", (req, res, next) => {
   const { artId } = req.params;
-  const { review } = req.body;
+  const { contact } = req.body;
   const { user } = req;
 
   Contact.create({ user: user._id, contact})

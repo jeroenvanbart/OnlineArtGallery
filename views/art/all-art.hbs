@@ -1,5 +1,10 @@
 <section>
   <h1>All Art </h1>
+
+
+
+
+  
   {{#each art}}
   <article>
     <h2>{{name}}</h2>
@@ -10,20 +15,15 @@
 
     <br>
 
-    <a href="/art/{{id}}">See Details</a>
+    <a href="/art/{{id}}/details">See Details</a>
 
-    {{#if isOwner}}
-    <a href="/art/{{id}}/edit">Edit Art</a>
-    <form action="/art/{{id}}/delete" method="post">
-      <button type="submit">Delete</button>
-    </form>
-    {{/if}}
+
     
     
 
     {{#if contact}}
     <div>
-      <h3>All reviews for this room</h3>
+      <h3>Reviews for this Artwork</h3>
       <ul>
         {{#each contact}}
         <li>

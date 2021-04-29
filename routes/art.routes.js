@@ -23,7 +23,7 @@ fileUploader.single("imageUrl"),(req, res, next) => {
 
   Art.create({ title, description, owner: _id, imageUrl: path })
     .then(() => {
-      res.redirect("/art");
+      res.redirect("/profile");
     })
     .catch((createErr) => next(createErr));
 });
@@ -39,7 +39,7 @@ router.get("/art/:artId", (req, res, next) => {
         if (artResult.owner.equals(req.user)) {
           artResult.isOwner = true;
         }}
-      res.status(200).render("art/details", { artResult, user: req.user });
+      res.redirect("/profile");
     })
     .catch((findErr) => next(findErr));
 });
@@ -47,7 +47,7 @@ router.get("/art/:artId", (req, res, next) => {
 router.get("/art/:artId/edit", (req, res, next) => {
   const { artId } = req.params;
   Art.findById(artId)
-    .then((roomResult) => {
+    .then((artResult) => {
       res.status(200).render("art/edit-art", { artResult, user: req.user });
     })
     .catch((findErr) => next(findErr));
@@ -55,9 +55,9 @@ router.get("/art/:artId/edit", (req, res, next) => {
 
 router.post("/art/:artId/edit", (req, res, next) => {
   const { artId } = req.params;
-  const { name, description } = req.body;
+  const { title, description } = req.body;
 
-  Art.findByIdAndUpdate(artId, { name, description })
+  Art.findByIdAndUpdate(artId, { title, description })
     .then((updatedArt) => {
       res.redirect(`/art/${updatedArt._id}`);
     })
@@ -68,7 +68,7 @@ router.post("/art/:artId/delete", (req, res, next) => {
   const { artId } = req.params;
   Art.findByIdAndDelete(artId)
     .then(() => {
-      res.redirect("/art");
+      res.redirect("/profile");
     })
     .catch((deleteErr) => {
       next(deleteErr);

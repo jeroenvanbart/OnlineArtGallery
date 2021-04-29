@@ -1,29 +1,27 @@
-<section>
-  <h1>The details of the room : {{artResult.name}}</h1>
-  <p>{{artResult.description}}</p>
-   <div class="artimage">
-        <img src={{artResult.imageUrl}} alt="">
-    </div>
+<h1> details</h1>
 
+
+<section>
+  <h1>{{artResults.title}}</h1>
+  <p>{{artResults.description}}</p>
+   <div class="artimage">
+        <img src={{artResults.imageUrl}} alt="">
+    </div>
   <br>
 
-  {{#if artResult.isOwner}}
-  <a href="/art/{{artResult.id}}/edit">Edit</a>
+  
 
-  <hr>
-  {{/if}}
-
-  {{#unless artResult.isOwner}}
+  {{#if user}}
   <div>
     <h3>Add a review:</h3>
 
-    <form action="/art/{{artResult.id}}/add-review" method="post">
+    <form action="/art/{{artResults.id}}/add-contact" method="post">
       <textarea name="review" cols="30" rows="10"></textarea>
       <button type="submit">Add contact</button>
     </form>
 
   </div>
-  {{/unless}}
+  {{/if}}
 
 
 
