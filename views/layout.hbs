@@ -6,27 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body >
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a href="/">
-    <img alt="logo-img" src="/images/logo-jvb.png" width="70">
-  </a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item active"><a class="nav-link" href="/art">All Art</a></li>
-      <li class="nav-item active"><a class="nav-link" href="/artists">All Artists</a></li>
+  <nav class="navbar">
+  
+  <div class="nav-div">
+    <ul class="navbar-nav">
       {{#if user}}
-      <li class="nav-item active"><a class="nav-link" href="/profile">Profile</a></li>
-      <li class="nav-item active"><a class="nav-link" href="/create-art">Upload Art</a></li>
-      <li class="nav-item active"><a class="nav-link" href="/logout">Logout</a></li>
+      <div class="links">
+        <a href="/">
+          <img alt="logo-img" src="/images/logo-jvb.png" width="70">
+        </a>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/art">All Art</a></li>
+        <li class="nav-item"><a class="nav-link" href="/artists">All Artists</a></li>
+        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/create-art">Upload Art</a></li>
+      </div>
+      <div class="btn-div">
+        <button class="btn" onclick="location.href='/Logout'" type="button">logout</button>
+      </div>
       {{else}}
-      <li class="nav-item active"><a class="nav-link" href="/login">Login</a></li>
-      <li class="nav-item active"><a class="nav-link" href="/signup">SignUp</a></li>
+      <div class="links">
+        <a href="/">
+          <img alt="logo-img" src="/images/logo-jvb.png">
+        </a>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/art">All Art</a></li>
+        <li class="nav-item"><a class="nav-link" href="/artists">All Artists</a></li>
+      </div>
+      <div class="btn-div">
+        <button class="btn" onclick="location.href='/login'" type="button">Login</button>
+        <button class="btn" onclick="location.href='/signup'" type="button">SignUp</button>
+      </div>
       {{/if}}
     </ul>
     </div>

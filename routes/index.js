@@ -73,4 +73,20 @@ router.get("/artists", (req, res, next) => {
     .catch((findErr) => next(findErr));
 });
 
+router.get("/search-art", (req, res, next) =>{
+  res.render("/searchRes")
+})
+
+
+// router.post("/search-art", 
+// (req, res, next) => {
+//   console.log(req.body)
+//   Art.find({title: { $regex: "s", $options: "i" }
+//     .then((foundData) => {
+//       res.render("/searchRes", {foundData});
+//     })
+//     .catch((findUpdateErr) => next(findUpdateErr))
+// });
+
+
 module.exports = router;

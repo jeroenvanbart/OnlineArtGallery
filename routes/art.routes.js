@@ -17,11 +17,11 @@ router.get("/create-art", (req, res) => {
 */
 router.post("/create-art" ,
 fileUploader.single("imageUrl"),(req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, medium, price } = req.body;
   const { _id } = req.user;
   const { path } = req.file;
 
-  Art.create({ title, description, owner: _id, imageUrl: path })
+  Art.create({ title, description, medium, price, owner: _id, imageUrl: path })
     .then(() => {
       res.redirect("/profile");
     })

@@ -1,16 +1,61 @@
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00B7FF; } */
-
-/*# sourceMappingURL=style.css.map */
-
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 .artimage img{
   width: 20%;
 }
 
 .profileimage img{
   width: 20%;
+}
+
+.navbar{
+  background-color: black;
+  height: 100px;
+}
+.navbar a{
+  text-decoration: none;
+  color: white;
+  
+}
+.navbar li{
+  list-style: none;
+  font-size: 1.2em;
+  border: white 2px solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.links img{
+  width: 100px;
+  margin: auto 30px;
+  
+}
+.btn-div{
+  margin-right: 50px;
+
+}
+
+.btn {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 30px 10px;
+  font-size: 1em;
+}
+.navbar-nav{
+  display: flex;
+  justify-content: space-between;
 }
