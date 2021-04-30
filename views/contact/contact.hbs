@@ -1,10 +1,14 @@
-<h1>NODEMAILER</h1>
-<form action="/send-email" method="post">
-  <label for="">Email</label>
-  <input type="email" name="email" id="">
-  <label for="">Subject</label>
-  <input type="text" name="subject" id="">
-  <label for="">Message</label>
-  <textarea type="text" name="message" id=""></textarea>
-  <button type="submit">Submit</button>
-</form>
+<div class="contactcontainer">
+
+  <h1>Contact the artist by email</h1>
+  <form action="/send-email" method="post" class="contactform">
+    <label for="email"></label hidden>
+    <input class="passwordinput" type="hidden" name="email" value="{{data.owner.email}}" id="">
+    <label for="">Subject</label>
+    <input class="passwordinput" type="text" name="subject" placeholder="Type the subject of your email here...." >
+    <label for="">Message</label>
+    <textarea class="commentboxsignup" type="text" cols="30" rows="10" name="message" placeholder="Type your email here...."></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+</div>

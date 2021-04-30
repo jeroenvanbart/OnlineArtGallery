@@ -1,28 +1,60 @@
-<h1> details</h1>
 
-
-<section>
-  <h1>{{artResults.title}}</h1>
-  <p>{{artResults.description}}</p>
-   <div class="artimage">
+<section class="artdetailscontainer">
+<div class="artdetails-box">
+ <h1>{{artResults.title}}</h1>
+  <div class="artimagebig">
         <img src={{artResults.imageUrl}} alt="">
     </div>
-  <br>
-
-  
-
   {{#if user}}
-  <div>
-    <h3>Add a review:</h3>
+<hr>
+  <h3 class="artdetails">Details</h3>
+  <hr>
+  <p class="artdetails">{{artResults.description}}</p>
+  <p class="artdetails">{{artResults.medium}}</p>
+  <p class="artdetails"> price €{{artResults.price}},-</p>
+</div>
 
-    <form action="/art/{{artResults.id}}/add-contact" method="post">
-      <textarea name="review" cols="30" rows="10"></textarea>
-      <button type="submit">Add contact</button>
-    </form>
-
+  <div class="commentboxcontainer">
+    <h3>Leave a Comment</h3>
+    <div class="commentbox">
+      <form class="commentbtn" action="/art/{{artResults.id}}/add-contact" method="post">
+        <textarea name="contact" cols="30" rows="10" placeholder="Type your comment here ..."></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="contactartistbtn">
+        <a href="/{{artResults.id}}/contact">Contact artist by email</a>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="contactartistbtn">
+    <p class="signuptext">To see more details or for contactoptions login is required!</p>
+    <a href="/login">login</a>
+    <a href="/signup">Signup</a>
   </div>
   {{/if}}
-
-
+   <div class="commentscontainer"></div>
+  {{#if contact}}
+      <div>
+      <h3 class="artdetailsh3">Comments for this Artwork</h3>
+      
+      
+        {{#each contact}}
+          <div class="commentcontainer">
+            <div class="comments">
+              <p>{{this.contact}}</p>
+              <p>Written by: {{this.user.fullName}}</p>
+              <hr>
+            </div>
+          </div>
+        {{/each}}
+      
+    
+    {{else}}
+    <h3>There are no reviews for this art yet!</h3>
+    {{/if}}
+    </div>
+  </div>
+  
 
 </section>

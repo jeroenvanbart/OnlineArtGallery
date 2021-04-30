@@ -36,8 +36,6 @@ app.use(passport.session());
 require("./configs/serialize.config");
 passport.use(localStrategy);
 
-// Express View engine setup
-
 app.use(
   require("node-sass-middleware")({
     src: path.join(__dirname, "public"),
@@ -51,7 +49,6 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
-// default value for title local
 app.locals.title = "OnlineArtGallery";
 
 app.use("/", require("./routes/index"));

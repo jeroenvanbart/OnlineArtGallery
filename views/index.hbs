@@ -1,46 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<section>
-  <h1>All Art </h1>
+<header class="headerbox">
+  <h1>Artwall</h1>
+  <p>Welcome to our Online Art Gallery</p>
+</header>
 
-
-
+<section class="homewall">
 
   
   {{#each allArtResults}}
   <article>
     <h2>{{this.title}}</h2>
     <p>{{this.description}}</p>
-    <div class="artimage">
+    <div class="artimagehome">
         <img src={{this.imageUrl}} alt="">
     </div>
 
     <br>
 
     <a href="/art/{{id}}/details">See Details</a>
-
-
-    
-    
-
-    {{#if contact}}
-    <div>
-      <h3>Reviews for this Artwork</h3>
-      <ul>
-        {{#each contact}}
-        <li>
-          <div>
-            <p>{{this.contact}}</p>
-            <p>Written by: {{this.user.fullName}}</p>
-          </div>
-        </li>
-        {{/each}}
-      </ul>
-      <hr>
-    </div>
-    {{else}}
-    <h3>There are no reviews for this art yet!</h3>
-    {{/if}}
 
   </article>
   {{/each}}

@@ -1,14 +1,14 @@
-<h2>Login</h2>
+<h2 class="headerbox">Login</h2>
 
 <form action="/login" method="POST" id="form-container">
-  <div>
-    <label for="email">Username</label>
-    <input id="email" type="email" name="email" required>
+  <div class="emailinput">
+    <label for="email">Emailadress</label>
+    <input id="email" type="email" name="email" placeholder="Type Your emailadress here...." required>
   </div>
 
-  <div>
+  <div class="passwordinput">
     <label for="password">Password</label>
-    <input id="password" type="password" name="password" required>
+    <input id="password" type="password" name="password" placeholder="Type Your password here...." required>
   </div>
 
   {{#if message}}
@@ -20,13 +20,14 @@
   {{/if}}
 
 
-  <div>
+  <div class="commentbtn">
     <button>Login</button>
   </div>
 
-  <p class="account-message">
+<div class="account-message">
+  <p>
     Sign Up?
-    <a href="/signup">Sign Up</a>
   </p>
-
+  <a href="/signup">Sign Up</a>
+</div>
 </form>

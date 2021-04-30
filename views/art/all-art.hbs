@@ -1,7 +1,7 @@
-<section>
-  <h1>All Art </h1>
+<section class="titleallart">
+  <h1>All Works of Art </h1>
 
-<form action="/search-art" method="POST" >
+{{!-- <form action="/search-art" method="POST" >
   <div>
     <label for="search">Search for Art by title</label>
     <input type="text" placeholder="Search..">
@@ -9,48 +9,24 @@
   <div>
     <button>Start Search</button>
   </div>
-</form>
-
-
-
-  
+</form> --}}
+</section>
   {{#each art}}
-  <article>
-    <h2>{{name}}</h2>
+<section class="allartcontainer">
+  <article class="artcards">
+
+    {{!-- {{> allart this}} --}}
+    <h2>{{title}}</h2>
     <p>{{description}}</p>
-    <div class="artimage">
+    <div class="artimageallart">
         <img src={{imageUrl}} alt="">
     </div>
 
-    <br>
-
     <a href="/art/{{id}}/details">See Details</a>
 
-    <a href="/contact">contact artist</a>
-
-
-    
-    
-
-    {{#if contact}}
-    <div>
-      <h3>Reviews for this Artwork</h3>
-      <ul>
-        {{#each contact}}
-        <li>
-          <div>
-            <p>{{this.contact}}</p>
-            <p>Written by: {{this.user.fullName}}</p>
-          </div>
-        </li>
-        {{/each}}
-      </ul>
-      <hr>
-    </div>
-    {{else}}
-    <h3>There are no reviews for this art yet!</h3>
-    {{/if}}
+ 
 
   </article>
   {{/each}}
+
 </section>

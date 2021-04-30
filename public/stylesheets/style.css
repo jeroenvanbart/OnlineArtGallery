@@ -5,14 +5,21 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
+
+
 .artimage img{
   width: 20%;
+}
+.artimagebig img{
+  width: 70vw;
 }
 
 .profileimage img{
   width: 20%;
 }
 
+/* layout */
 .navbar{
   background-color: black;
   height: 100px;
@@ -25,10 +32,14 @@
 .navbar li{
   list-style: none;
   font-size: 1.2em;
-  border: white 2px solid;
+  border: white 1px solid;
   border-radius: 5px;
   padding: 5px 10px;
   
+}
+
+.navbar li:hover{
+  background-color: green;
 }
 
 .links{
@@ -55,7 +66,339 @@
   margin: 30px 10px;
   font-size: 1em;
 }
+
+.btn:hover{
+  background-color: white;
+  color: black;
+}
+
 .navbar-nav{
   display: flex;
   justify-content: space-between;
+}
+.footer{
+  text-align: center;
+  margin-top: 600px;
+  color: lightgray;
+}
+
+/* allart */
+
+.titleallart{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.allartcontainer{
+  display: flex;
+  justify-content: space-evenly;
+  gap:20px;
+  
+}
+.artcards{
+  width: 25vw;
+  height: 40vh;
+  margin: 30px;
+  background-color: black;
+  color: white;
+  padding: 20px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+.artimageallart img{
+  width: 24vw;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.artcards a{
+text-decoration: none;
+color: black;
+background-color: white;
+border-radius: 5px;
+padding: 5px 10px;
+margin: 30px;
+
+
+}
+.artcards a:hover{
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 5px 10px;
+  
+  }
+
+/* artdetail */
+.signuptext{
+  color: lightgreen;
+  margin: 20px;
+}
+
+.artdetailscontainer{
+  text-align: center;
+}
+
+.artdetailscontainer h1{
+  margin: 30px auto;
+}
+.commentboxcontainer h3{
+  margin-top: 30px;
+}
+.artdetailsh3{
+  margin: 20px;
+  color: white;
+}
+
+.commentscontainer{
+  border: 2px solid green;
+  margin: 50px 11%;
+  border-radius: 10px;
+  
+}
+.commentbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+.commentbtn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 10%;
+  gap: 20px;
+}
+.commentbtn button{
+  width: 100px;
+  align-self: center;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 30px 10px;
+  font-size: 1em;
+}
+
+.commentbtn textarea{
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.commentbtn button:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+}
+.commentcontainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px;
+}
+.comments{
+  margin: 10px 10%;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+.commenth1{
+  margin-top: 30px;
+}
+
+.contactartistbtn a{
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 30px 10px;
+  font-size: 1em;
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+}
+
+.contactartistbtn a:hover{
+  text-decoration: none;
+  width: 100px;
+  align-self: center;
+  background-color: green;
+  color: white;
+  border: none;
+  
+}
+.artdetailscontainer h1{
+  color:white;
+}
+.artdetails-box{
+  font-size: 1.2em;
+  border: 1px solid green;
+  margin: 10px 11%;
+  border-radius: 5px;
+  background-color: black;
+}
+.artdetails{
+  color:white;
+  margin:10px;
+}
+
+/* homepage */
+
+.headerbox{
+  text-align: center;
+  margin: 30px auto;
+}
+.homewall{
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+  
+}
+
+.homewall article{
+  width: 25vw;
+  height: 40vh;
+  margin: 30px;
+  background-color: black;
+  color: white;
+  padding: 20px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.artimagehome img{
+  width: 24vw;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.homewall a{
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 30px;
+}
+.homewall a:hover{
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 5px 10px;  
+}
+
+/* login */
+
+#form-container h1{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.emailinput{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30%;
+  justify-content: center;
+}
+.passwordinput{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30%;
+}
+
+.account-message{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.account-message a{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 10px 10px;  
+  margin: 20px 45%;
+
+}
+
+.account-message a:hover{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 10px 10px;  
+  margin: 20px 45%;
+}
+
+/* signup */
+
+.commentboxsignup{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 30%;
+}
+
+#bio{
+  padding: 10px;
+}
+.uploadpicture{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+#profileImgUrl{
+  margin: 20px 30%;
+  align-self: center;
+  padding: 10px 15px;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  
+}
+#profileImgUrl:hover{
+  
+  background-color: white;
+  color: black;
+}
+/* emailmssg */
+.emailmssg{
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.contactcontainer h1{
+  text-align: center;
+  margin: 30px;
+}
+
+.contactform{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap:20px;
+}
+
+.contactform button{
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 30px 45%;
+  font-size: 1em;
 }

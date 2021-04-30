@@ -26,13 +26,21 @@ router.post("/art/:artId/add-contact", (req, res, next) => {
     .catch((createContactErr) => next(createContactErr));
 });
 
-router.get("/contact", (req, res, next) => {
-  res.render("contact/contact")
+router.get("/:artid/contact", (req, res, next) => {
+  const {artid} = req.params
+  Art.findById(artid)
+  .populate("owner")
+  .then((data) => {
+    console.log(data.owner.email)
+    res.render("contact/contact", {data})
+  })
+  .catch(error => console.log(error));
+  
 })
 
 router.post('/send-email', (req, res, next) => {
   let {user} = req;
-  console.log(user)
+  console.log(user.email)
   let { email, subject, message } = req.body;
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -42,13 +50,13 @@ router.post('/send-email', (req, res, next) => {
     }
   });
   transporter.sendMail({
-    from: '"My Awesome Project " <myawesome@project.com>',
+    from: '"My Artwall" <myawesome@project.com>',
     to: email, 
-    subject: subject, 
+    subject: `${user.email} sent you an email`, 
     text: message,
     html: `<b>${message}</b>`
   })
-  .then(info => res.render('contact/message', {email, subject, message, info}))
+  .then(info => res.status(200).render('contact/message', {email, subject, message, info}))
   .catch(error => console.log(error));
 });
 
