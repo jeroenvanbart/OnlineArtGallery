@@ -1,9 +1,24 @@
-<h1>hi</h1>
+<h1 class="headerbox">Artistwall</h1>
+<h2 class="headerbox">All artists</h2>
+
+<section class="titleallart">
+    <form class="searchbar" action="/search-artist" method="GET" name="search">
+        <label for="search">Search for Artist</label>
+        <div class="searchfield">
+            <input name="search" type="text" placeholder="Search..">
+            <button>Start Search</button>
+        </div>
+    </form>
+</section>
+
+<section class="allartcontainer">
 {{#each artistArr}}
-
-<h4>{{this.fullName}} </h4>
-<div class="artimage">
-    <img src="{{this.profileImgUrl}}" alt="">
-</div>
-
+    <article class="artcards">
+        <h2>{{this.fullName}} </h2>
+        <a href="{{this.id}}/details">See Details</a>
+        <div class="artimageallart">
+            <img src="{{this.profileImgUrl}}" alt="">
+        </div>
+    </article>
 {{/each}}
+</section>

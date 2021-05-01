@@ -75,4 +75,15 @@ router.post("/art/:artId/delete", (req, res, next) => {
     });
 });
 
+router.post("/art/:artId/add-rating", (req, res, next) => {
+  const { artId } = req.params;
+  const { rating } = req.body;
+  const { user } = req;
+  Art.findByIdAndUpdate(artId, {$push:{rating: rating}})
+    .then(() => {
+          res.redirect(`/art/${artId}/details`);
+    })
+    .catch((createContactErr) => next(createContactErr));
+});
+
 module.exports = router;

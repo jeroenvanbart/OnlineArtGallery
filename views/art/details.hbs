@@ -15,6 +15,26 @@
 </div>
 
   <div class="commentboxcontainer">
+    <h3>Rate this incredible piece</h3>
+  <form class="passwordinput" action="/art/{{artResults.id}}/add-rating" method="post">
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating" required>
+    <option value="1">1 stars</option>
+    <option value="2">2 stars</option>
+    <option value="3">3 stars</option>
+    <option value="4">4 stars</option>
+    <option value="5">5 stars</option>
+    </select>
+  <button type="submit">Submit</button>
+  </form>
+
+<div>
+  <h4>This piece gets an average</h4>
+  <h4>{{roundednr}}</h4>
+  <h4>stars</h4>
+</div>
+
+
     <h3>Leave a Comment</h3>
     <div class="commentbox">
       <form class="commentbtn" action="/art/{{artResults.id}}/add-contact" method="post">
@@ -22,13 +42,13 @@
         <button type="submit">Submit</button>
       </form>
       <div class="contactartistbtn">
-        <a href="/{{artResults.id}}/contact">Contact artist by email</a>
+        <a href="/{{artResults.id}}/contact">Email Artist</a>
       </div>
     </div>
   </div>
   {{else}}
   <div class="contactartistbtn">
-    <p class="signuptext">To see more details or for contactoptions login is required!</p>
+    <p class="signuptext">To see more details or for contact options login is required!</p>
     <a href="/login">login</a>
     <a href="/signup">Signup</a>
   </div>

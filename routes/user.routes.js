@@ -13,8 +13,10 @@ router.get("/profile", (req, res, next) => {
         for (let i= 0; i < allArtResults.length; i++) {
           if (user.equals(allArtResults[i].owner)){
             artarr.push(allArtResults[i])
-        }}; 
-      res.status(200).render("users/profile", { user, artarr });
+        }
+      }; 
+      if(user.usertype === "artist"){user.isartist = true}
+      res.status(200).render("users/profile", { user, artarr, allArtResults });
     })
     .catch((findErr) => next(findErr));
 });
@@ -61,5 +63,8 @@ router.post("/users/:userId/edit-profile-picture", fileUploader.single("profileI
     .catch((findUpdateErr) => next(findUpdateErr));
 });
 
+
+
+// /users/{{id}}/details
 
 module.exports = router;

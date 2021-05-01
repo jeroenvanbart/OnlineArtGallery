@@ -1,23 +1,76 @@
-<header class="headerbox">
-  <h1>Artwall</h1>
-  <p>Welcome to our Online Art Gallery</p>
+<header>
+  <h1 class="headerbox">ArtWall</h1>
+  <h2 class="headerbox">Welcome to our Online Art Gallery</h2>
+  
 </header>
 
-<section class="homewall">
+<article class="indexhead">
+  <p>Find new Art and Artists by tapping Discover</p>
+  <a class="alink" href="/">Discover</a>
+</article>
 
-  
-  {{#each allArtResults}}
-  <article>
-    <h2>{{this.title}}</h2>
-    <p>{{this.description}}</p>
-    <div class="artimagehome">
-        <img src={{this.imageUrl}} alt="">
+
+
+
+<h2 class="homeh2">Selected art for you</h2>
+
+<section class="allartcontainer">
+
+  <article class="artcards">
+    <h2>{{allArtResults.0.title}}</h2>
+    <a href="/art/{{allArtResults.0._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{allArtResults.0.imageUrl}} alt="">
     </div>
-
-    <br>
-
-    <a href="/art/{{id}}/details">See Details</a>
-
   </article>
-  {{/each}}
+
+  <article class="artcards">
+    <h2>{{allArtResults.1.title}}</h2>
+    <a href="/art/{{allArtResults.1._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{allArtResults.1.imageUrl}} alt="">
+    </div>
+  </article>
+
+  <article class="artcards">
+    <h2>{{allArtResults.2.title}}</h2>
+    <a href="/art/{{allArtResults.2._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{allArtResults.2.imageUrl}} alt="">
+    </div>
+  </article>
+  </section>
+
+<hr>
+
+ <h2 class="homeh2">Selected artists for you</h2>
+
+
+<section class="allartcontainer">
+    
+  <article class="artcards">
+    <h2>{{artistarr.0.fullName}}</h2>
+    <a href="{{artistarr.0._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{artistarr.0.profileImgUrl}} alt="">
+    </div>
+  </article>
+
+  <article class="artcards">
+    <h2>{{artistarr.1.fullName}}</h2>
+    <a href="{{artistarr.1._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{artistarr.1.profileImgUrl}} alt="">
+    </div>
+  </article>
+
+  <article class="artcards">
+    <h2>{{artistarr.2.fullName}}</h2>
+    <a href="{{artistarr.2._id}}/details">See Details</a>
+    <div class="artimageallart">
+        <img src={{artistarr.2.profileImgUrl}} alt="">
+    </div>
+  </article>
+  
+
 </section>

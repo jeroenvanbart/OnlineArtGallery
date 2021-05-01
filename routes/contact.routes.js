@@ -5,6 +5,8 @@ const Contact = require("../models/Contact.model");
 const Art = require("../models/Art.model");
 const nodemailer = require('nodemailer')
 
+
+
 router.post("/art/:artId/add-contact", (req, res, next) => {
   const { artId } = req.params;
   const { contact } = req.body;
@@ -19,19 +21,20 @@ router.post("/art/:artId/add-contact", (req, res, next) => {
           return foundArt.save();
         })
         .then(() => {
-          res.redirect(`/art`);
+          res.redirect(`/art/${artId}/details`);
         })
         .catch((artFindErr) => next(artFindErr));
     })
     .catch((createContactErr) => next(createContactErr));
 });
 
+
+
 router.get("/:artid/contact", (req, res, next) => {
   const {artid} = req.params
   Art.findById(artid)
   .populate("owner")
   .then((data) => {
-    console.log(data.owner.email)
     res.render("contact/contact", {data})
   })
   .catch(error => console.log(error));
@@ -40,7 +43,7 @@ router.get("/:artid/contact", (req, res, next) => {
 
 router.post('/send-email', (req, res, next) => {
   let {user} = req;
-  console.log(user.email)
+
   let { email, subject, message } = req.body;
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -52,9 +55,9 @@ router.post('/send-email', (req, res, next) => {
   transporter.sendMail({
     from: '"My Artwall" <myawesome@project.com>',
     to: email, 
-    subject: `${user.email} sent you an email`, 
+    replyTo: user.email,
+    subject: subject, 
     text: message,
-    html: `<b>${message}</b>`
   })
   .then(info => res.status(200).render('contact/message', {email, subject, message, info}))
   .catch(error => console.log(error));

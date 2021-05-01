@@ -1,28 +1,28 @@
-<h2>Create Room</h2>
+<h2 class="headerbox">Upload Art</h2>
 
-<form action="/create-art" method="POST" id="form-container" enctype="multipart/form-data">
+<form class="uploadartform" action="/create-art" method="POST" enctype="multipart/form-data">
 
-  <div>
+  <div class="passwordinput">
     <label for="title">Art Name</label>
-    <input id="title" type="text" name="title" required>
+    <input id="title" type="text" name="title" maxlength="19" placeholder="Type Your Title here...." required>
   </div>
 
-  <div>
+  <div class="commentboxsignup">
     <label for="description">Description</label>
-    <textarea id="description" name="description" id="" cols="30" rows="10" required></textarea>
+    <textarea id="description" name="description" id="" cols="30" rows="10" placeholder="Tell us about your art...." required></textarea>
   </div>
 
-   <div>
+   <div class="passwordinput">
     <label for="medium">Medium</label>
-    <input id="medium" type="text" name="medium" required>
+    <input id="medium" type="text" name="medium" placeholder="What's your poison...." required>
   </div>
 
-   <div>
+   <div class="passwordinput">
     <label for="price">Price</label>
-    <input id="price" type="number" name="price" required>
+    <input id="price" type="number" name="price" placeholder="For how much money can i be the owner of this increadible piece?" required>
   </div>
 
- <div>
+ <div class="uploadpicture">
     <label for="imageUrl">Upload profile Image</label>
     <input id="imageUrl" type="file" name="imageUrl" required >
   </div>
@@ -32,7 +32,7 @@
   {{/if}}
 
 
-  <div>
+  <div class="commentbtn">
     <button>Create Art</button>
   </div>
 

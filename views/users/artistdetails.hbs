@@ -1,0 +1,25 @@
+<h1 class="headerbox">Artist Profile</h1>
+
+<article class="userprofilecard">
+        <h2>{{artArr.0.owner.fullName}}</h2>
+        <div>
+            <img class="profileimage" src="{{artArr.0.owner.profileImgUrl}}" alt="">
+        </div>
+        <p>{{artArr.0.owner.bio}}</p>
+</article>
+
+<hr>
+
+<h2 class="headerbox">This Artists Works</h2>
+
+<article class="profileArtcontainer">
+{{#each artArr}}
+    <div class="profileartcards">
+        <h3>{{title}}</h3>
+        <div >
+            <img class="artimageprofile" src="{{imageUrl}}" alt="">
+        </div>
+        <a href="/art/{{id}}/details">See Details</a>
+    </div>
+{{/each}}
+</article>

@@ -6,6 +6,7 @@ const artSchema = new Schema({
   medium: { type: String },
   price: {type: Number},
   imageUrl: { type: String },
+  rating: [{ type: Number }],
   owner: { type: Schema.Types.ObjectId, ref: "User" },
   contact: [{ type: Schema.Types.ObjectId, ref: "Contact" }],
 });

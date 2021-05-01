@@ -1,34 +1,37 @@
+
+<h1 class="headerbox">{{user.fullName}}</h1>
+
 <section>
-  <h1>{{user.fullName}}</h1>
-  <div class="profileimage">
-    <img src={{user.profileImgUrl}} alt="">
+<div class="userprofilecard">
+    <img class="profileimage" src={{user.profileImgUrl}} alt="">
     <a href="/users/{{user.id}}/edit-profile-picture">Change Profile Pictue</a>
     <p>{{user.bio}}</p>
-  </div>
-
-  
-</section>
-
-  {{!-- {{#if user.isOwner}} --}}
   <div>
-  <a href="/users/{{user.id}}/edit-profile">Edit Profile name and bio</a>
-  <hr>
+    <a href="/users/{{user.id}}/edit-profile">Edit Profile name and bio</a>
   </div>
-  {{!-- {{/if}} --}}
+</div>
+</section>
+<hr>
 
-<section class="artimage">
-<h2>My Gallery</h2>
-    {{#each artarr}}
-    
-    <h4>{{this.title}}</h4>
-    <p> {{this.description}}
-    
-    <img src="{{this.imageUrl}}" alt="">
+{{#if user.isartist }}
+    <h2 class="headerbox">My Gallery</h2>
+  <div class="uploadartbutton">
+      <a class="uploadnewart" href="/create-art">Upload New Art</a></li>
+  </div>
+{{/if}}
+
+
+<section class="profileArtcontainer">
+  {{#each artarr}}
+  <div class="profileartcards">
+    <h2>{{this.title}}</h2>
+    <img class="artimageprofile" src="{{this.imageUrl}}" alt="">
+    <p> {{this.description}}</p>
     <a href="/art/{{id}}/edit">Edit Art</a>
     <form action="/art/{{id}}/delete" method="post">
       <button type="submit">Delete</button>
     </form>
-  
-    {{/each}}
+  </div>
+  {{/each}}
 </section>
  
