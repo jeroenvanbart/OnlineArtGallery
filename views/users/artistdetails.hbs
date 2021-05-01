@@ -13,13 +13,20 @@
 <h2 class="headerbox">This Artists Works</h2>
 
 <article class="profileArtcontainer">
+{{#if artArr}}
 {{#each artArr}}
+
     <div class="profileartcards">
         <h3>{{title}}</h3>
-        <div >
+        <div>
             <img class="artimageprofile" src="{{imageUrl}}" alt="">
         </div>
         <a href="/art/{{id}}/details">See Details</a>
     </div>
 {{/each}}
+{{else}}
+<div class="error-message">
+    <h1>This artist has no art to show yet</h1>
+</div>
+{{/if}}
 </article>

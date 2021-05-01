@@ -1,10 +1,10 @@
-<h2>edit profile</h2>
+<h2 class="headerbox">edit profile</h2>
 
 <form action="/users/{{user.id}}/edit-profile" method="POST" id="form-container" >
 
-  <div>
+  <div class="passwordinput">
     <label for="fullName">Full Name</label>
-    <input id="fullName" type="text" value="{{user.fullName}}" name="fullName" required>
+    <input id="fullName" type="text" maxlength="19" value="{{user.fullName}}" name="fullName" required>
   </div>
 
   {{!-- <div>
@@ -12,28 +12,17 @@
     <input id="email" type="email" value="{{user.email}}" name="email" required>
   </div> --}}
 
-     <div>
+  <div class="commentboxsignup">
     <label for="bio">bio</label>
     <textarea id="bio" name="bio" id="bio" cols="30" rows="10">{{user.bio}}</textarea>
-    </div>
-
-
-
-
+  </div>
 
   {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>
   {{/if}}
 
-  
-
-  <div>
-    <button>Create account</button>
+  <div class="commentbtn">
+    <button>Update account</button>
   </div>
-
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
-  </p>
 
 </form>

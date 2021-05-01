@@ -1,9 +1,19 @@
-<h1>search results</h1>
-<section>
+{{#if foundArtArr}}
+<h1 class="headerbox">We found these paintings for you</h1>
+{{else}}
+<h1 class="headerbox">Unfortunately we couldn't find art matching your search</h1>
+{{/if}}
+<section class="allartcontainersearch">
     {{#each foundArtArr}}
-    <h2> {{this.owner.fullName}} </h2>
-    <h2> {{this.title}} </h2>
-    <img src="{{this.imageUrl}}" alt="">
-    <a href="/art/{{id}}/details">See Details</a>
+    
+    <article class="artcardssearch">
+        <h2> {{this.owner.fullName}} </h2>
+        
+        <div class="artimageallart">
+            <img src="{{this.imageUrl}}" alt="">
+        </div>
+        <h2> {{this.title}} </h2>
+        <a href="/art/{{id}}/details">See Details</a>
+    </article>
     {{/each}}
 </section>

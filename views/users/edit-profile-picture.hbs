@@ -1,13 +1,14 @@
-
+<article class="picchange">
 <form action="/users/{{user.id}}/edit-profile-picture" method="POST" id="form-container" enctype="multipart/form-data">
-
-<div>
+<div class="uploadpicture">
     <label for="profileImgUrl">Upload profile Image</label>
     <input id="profileImgUrl" type="file" name="profileImgUrl" value="{{user.profileImgUrl}}" required >
   </div>
 
-  <div>
-    <button>Upload new picture</button>
+  <div class="commentbtn">
+    <button>Change</button>
   </div>
 
   </form>
+
+  </article>

@@ -1,22 +1,22 @@
-<section>
+<section class="headerbox">
   <h2>Edit Art</h2>
+</section>
 
   <form action="/art/{{artResult.id}}/edit" method="POST" id="form-container">
 
-    <div>
+    <div class="passwordinput">
       <label for="title">Art Name</label>
-      <input id="title" type="text" name="title" value="{{artResult.title}}">
+      <input id="title" type="text" name="title" maxlength="19" value="{{artResult.title}}">
     </div>
 
-    <div>
+    <div class="commentboxsignup">
       <label for="description">Description</label>
       <textarea id="description" name="description" id="description" cols="30"
         rows="10">{{artResult.description}}</textarea>
     </div>
 
-
+  <div class="commentbtn">
     <button>Edit Art</button>
-
+  </div>
 
   </form>
-</section>

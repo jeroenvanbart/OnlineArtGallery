@@ -15,12 +15,19 @@
   width: 70vw;
 }
 
-
+.error-message{
+  text-align: center;
+  background-color: rgb(230, 60, 60);
+  padding: 50px;
+  color: white;
+}
 
 /* layout */
 .navbar{
   background-color: black;
   height: 100px; 
+  position: sticky;
+  top: 0;
 }
 .navbar a{
   text-decoration: none;
@@ -111,12 +118,14 @@
   padding: 10px 20px;
   min-width: 50px;
   color: white;
+  border: 1px solid black;
   background-color: black;
   border-radius: 5px;
 }
 .searchfield button:hover{
   color: black;
   background-color: lightgray;
+  border: 1px solid black;
   
 }
 
@@ -161,7 +170,7 @@
 .artcards a{
 text-decoration: none;
 color: black;
-background-color: white;
+background-color: lightgray;
 border-radius: 5px;
 padding: 5px 10px;
 width: 10vw;
@@ -188,7 +197,7 @@ width: 10vw;
 .alink{
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: lightgray;
   border: 2px solid black;
   border-radius: 5px;
   padding: 5px 10px;
@@ -210,39 +219,188 @@ width: 10vw;
   margin: 30px;
 }
 
+/* profile */
 
+.headerboxprofile{
+  background-color:rgba(99, 95, 95, 0.8) ;
+  text-align: center;
+  width: 80vw;
+  margin: 20px 9.5%;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
 
+.userprofilecard{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(99, 95, 95, 0.8);
+  color: white;
+  margin: 30px 10%;
+  padding: 40px;
+  border-radius: 10px;
+}
 
+.userprofilecard a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(99, 95, 95, 0.8);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px 15px;
+}
 
+.userprofilecard a:hover{
+  background-color: lightgray;
+  border: none;
+  color: black;
+}
+.userprofilecard p{
+  text-align: center;
+  color: black;
+  margin: 20px 0;
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: lightgray;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.profileimage{
+  max-width: 40vw;
+  max-height: 40vh;
+}
+.profileArtcontainer{
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  gap:20px;
+  flex-wrap: wrap;
+  flex-flow:wrap-reverse;
+}
+.profileartcards{
+  width: 40vw;
+  height: auto;
+  margin: 30px;
+  background-color:rgba(99, 95, 95, 0.8);
+  color: white;
+  padding: 20px 5px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.artimageprofile{
+  max-width: 33vw;
+  max-height: 33vh;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 
+.profileartcards form{
+  display: flex;
+  flex-direction: column;
+}
 
-
+.profileartcards a{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 10vw;
+  margin-bottom: 20px;
+  border: white 1px solid;
+}
+.profileartcards a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border: black 1px solid;
+    
+}
+.profileartcards p{
+  margin: 30px;
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 5px;
+  color: black;
+  width: 35vw;
+}
+.profileartcards button{
+  margin: 30px;
+  padding: 10px 15px;
+  width: 100px;
+  font-size: 1.2em;
+  border: black 1px solid;
+  background-color: white;
+  border-radius: 5px;
+}
+.profileartcards button:hover{
+  background-color: red;
+}
 
 /* artdetail */
 .signuptext{
-  color: red;
+  color: rgba(230, 0, 0, 0.8);
   margin: 20px;
   margin-bottom: 40px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .artdetailscontainer{
   text-align: center;
+  margin-top: 70px;
 }
 
 .artdetailscontainer h1{
   margin: 30px auto;
+  background-color: lightgray;
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
 }
+
+.artdetailsh3{
+  margin: 20px;
+  color: black;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.artdetailsp{
+  color:black;
+  margin:10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.artdetailsrating{
+  border: 1px solid black;
+  margin: 10vw;
+  border-radius: 10px;
+  padding: 20px;
+}
+.star{
+  max-width: 50px;
+}
+
 .commentboxcontainer h3{
   margin-top: 30px;
 }
-.artdetailsh3{
-  margin: 20px;
-  color: white;
-}
 
 .commentscontainer{
-  border: 2px solid green;
+  
   margin: 50px 11%;
   border-radius: 10px;
   
@@ -257,13 +415,21 @@ width: 10vw;
 .passwordinput button{
   width: 100px;
   align-self: center;
-  background-color: green;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   margin: 30px 10px;
   font-size: 1em;
+}
+.passwordinput button:hover{
+  background-color: lightgray;
+  color: black;
+}
+
+.picchange{
+  margin-top: 30vh;
 }
 
 .commentbtn{
@@ -276,25 +442,39 @@ width: 10vw;
 .commentbtn button{
   width: 100px;
   align-self: center;
-  background-color: green;
+  background-color: black;
   color: white;
+  border: 2px solid white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   margin: 30px 10px;
   font-size: 1em;
 }
+.commentbtn button:hover{
+  background-color: lightgray;
+  color: black;
+  border: 2px solid black;
+}
+
+.contactartistemail{
+  background-color:rgba(99, 95, 95, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0 10%;
+}
+.contactartistemail h5{
+  margin-bottom: 20px;
+  font-size: 1em;
+  color: white;
+}
 
 .commentbtn textarea{
   border-radius: 5px;
   padding: 20px;
+  border: 1px solid black;
 }
 
-.commentbtn button:hover{
-  background-color: white;
-  color: black;
-  border: 2px solid green;
-}
 .commentcontainer{
   display: flex;
   justify-content: space-evenly;
@@ -313,39 +493,65 @@ width: 10vw;
   margin-top: 30px;
 }
 
-.contactartistbtn a{
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  margin: 30px 10px;
-  font-size: 1em;
-  background-color: white;
-  color: black;
-  border: 2px solid green;
-}
 
-.contactartistbtn a:hover{
-  text-decoration: none;
-  width: 100px;
-  align-self: center;
-  background-color: green;
-  color: white;
-  border: none;
-  
-}
-.artdetailscontainer h1{
-  color:white;
-}
 .artdetails-box{
   font-size: 1.2em;
-  border: 1px solid green;
   margin: 10px 11%;
   border-radius: 5px;
   background-color: gray;
+  padding: 30px;
+  
 }
-.artdetails{
-  color:white;
-  margin:10px;
+
+.allartcontainersearch{
+  display: flex;
+  justify-content: space-evenly;
+  gap:20px;
+  flex-wrap: wrap;
+  
+}
+.artcardssearch{
+  width: 28vw;
+  height: 55vh;
+  margin: 30px;
+  background-color: rgba(99, 95, 95, 0.8);
+  color: white;
+  padding: 20px 5px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.artcardssearch h2{
+  margin-bottom: 20px;
+}
+.artcardssearch p{
+  margin-bottom: 20px;
+}
+
+.artimageallartsearch img{
+  max-width: 20vw;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-height: 24vh;
+}
+.artcardssearch a{
+text-decoration: none;
+color: black;
+background-color: lightgray;
+border-radius: 5px;
+padding: 5px 10px;
+width: 10vw;
+
+}
+.artcardssearch a:hover{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 /* homepage */
@@ -468,46 +674,7 @@ width: 10vw;
 
 /* profile */
 
-.userprofilecard{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: gray;
-  color: white;
-  margin: 30px 10%;
-  padding: 30px;
-  border-radius: 10px;
-}
 
-.userprofilecard a{
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-color: green;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 10px 15px;
-}
-
-.userprofilecard a:hover{
-  background-color: white;
-  border: 3px solid green;
-  border: none;
-  color: black;
-}
-
-.userprofilecard p{
-  text-align: center;
-  color: white;
-  margin: 20px;
-  padding-bottom: 30px;
-  
-}
-.profileimage{
-  max-width: 24vw;
-  max-height: 24vh;
-}
 .uploadartbutton{
   display: flex;
   justify-content: center;
@@ -529,74 +696,7 @@ width: 10vw;
   color: black;
 }
 
-.profileArtcontainer{
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  gap:20px;
-  flex-wrap: wrap;
-  flex-flow:wrap-reverse;
-}
-.profileartcards{
-  width: 40vw;
-  height: auto;
-  margin: 30px;
-  background-color: black;
-  color: white;
-  padding: 20px 5px;
-  border-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.artimageprofile{
-  max-width: 33vw;
-  max-height: 33vh;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-
-.profileartcards form{
-  display: flex;
-  flex-direction: column;
-}
-
-.profileartcards a{
-  text-decoration: none;
-  color: white;
-  background-color: green;
-  border-radius: 5px;
-  padding: 10px 15px;
-  width: 10vw;
-  margin-bottom: 20px;
-  border: green 3px solid;
-}
-.profileartcards a:hover{
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border-radius: 5px;
-    border: green 3px solid;
-    
-}
-.profileartcards p{
-  margin: 30px;
-}
-.profileartcards button{
-  margin: 30px;
-  padding: 10px 15px;
-  width: 100px;
-  font-size: 1.2em;
-  border: green 3px solid;
-  background-color: white;
-  border-radius: 5px;
-}
-.profileartcards button:hover{
-  background-color: red;
-}
 
 /* publicprofile */
 

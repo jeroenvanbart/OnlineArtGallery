@@ -1,13 +1,13 @@
 
-<h1 class="headerbox">{{user.fullName}}</h1>
+<h1 class="headerboxprofile">{{user.fullName}}</h1>
 
 <section>
 <div class="userprofilecard">
     <img class="profileimage" src={{user.profileImgUrl}} alt="">
-    <a href="/users/{{user.id}}/edit-profile-picture">Change Profile Pictue</a>
+    <a href="/users/{{user.id}}/edit-profile-picture">Change Pictue</a>
     <p>{{user.bio}}</p>
   <div>
-    <a href="/users/{{user.id}}/edit-profile">Edit Profile name and bio</a>
+    <a href="/users/{{user.id}}/edit-profile">Edit Profile</a>
   </div>
 </div>
 </section>
@@ -27,10 +27,12 @@
     <h2>{{this.title}}</h2>
     <img class="artimageprofile" src="{{this.imageUrl}}" alt="">
     <p> {{this.description}}</p>
-    <a href="/art/{{id}}/edit">Edit Art</a>
-    <form action="/art/{{id}}/delete" method="post">
-      <button type="submit">Delete</button>
-    </form>
+    <div class="editdelete">
+      <a href="/art/{{id}}/edit">Edit Art</a>
+      <form action="/art/{{id}}/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
   </div>
   {{/each}}
 </section>

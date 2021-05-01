@@ -1,20 +1,18 @@
 
 <section class="artdetailscontainer">
-<div class="artdetails-box">
- <h1>{{artResults.title}}</h1>
-  <div class="artimagebig">
-        <img src={{artResults.imageUrl}} alt="">
-    </div>
-  {{#if user}}
-<hr>
-  <h3 class="artdetails">Details</h3>
-  <hr>
-  <p class="artdetails">{{artResults.description}}</p>
-  <p class="artdetails">{{artResults.medium}}</p>
-  <p class="artdetails"> price €{{artResults.price}},-</p>
-</div>
+  <div class="artdetails-box">
+  <h1>{{artResults.title}}</h1>
+    <div class="artimagebig">
+          <img src={{artResults.imageUrl}} alt="">
+      </div>
+    {{#if user}}
+    <h3 class="artdetailsh3">Details</h3>
+    <p class="artdetailsp">{{artResults.description}}</p>
+    <p class="artdetailsp">{{artResults.medium}}</p>
+    <p class="artdetailsp"> price €{{artResults.price}},-</p>
+  </div>
 
-  <div class="commentboxcontainer">
+  <div class="artdetailsrating">
     <h3>Rate this incredible piece</h3>
   <form class="passwordinput" action="/art/{{artResults.id}}/add-rating" method="post">
     <label for="rating">Rating</label>
@@ -27,13 +25,44 @@
     </select>
   <button type="submit">Submit</button>
   </form>
-
+{{#if roundednr}}
+  <div>
+    <h4>This piece gets an average</h4>
+    <h2>{{roundednr}}</h2>
+    <h4>stars</h4>
+    {{#if artResults.onestar}}
+    <img class="star" src="/images/gold_star.png" alt="">
+    {{/if}}
+    {{#if artResults.twostar}}
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    {{/if}}
+    {{#if artResults.treestar}}
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    {{/if}}
+    {{#if artResults.fourstar}}
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    {{/if}}
+    {{#if artResults.fivestar}}
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    <img class="star" src="/images/gold_star.png" alt="">
+    {{/if}}
+  </div>
+{{else}}
 <div>
-  <h4>This piece gets an average</h4>
-  <h4>{{roundednr}}</h4>
-  <h4>stars</h4>
+  <h4>Be the first to rate this piece</h4>
 </div>
-
+{{/if}}
+</div>
+<div>
 
     <h3>Leave a Comment</h3>
     <div class="commentbox">
@@ -41,16 +70,17 @@
         <textarea name="contact" cols="30" rows="10" placeholder="Type your comment here ..."></textarea>
         <button type="submit">Submit</button>
       </form>
-      <div class="contactartistbtn">
-        <a href="/{{artResults.id}}/contact">Email Artist</a>
+      <div class="contactartistemail">
+        <h5>Interested in purchasing this piece, contact the artist by email</h5>
+        <a class="alink" href="/{{artResults.id}}/contact">Email Artist</a>
       </div>
     </div>
   </div>
   {{else}}
   <div class="contactartistbtn">
     <p class="signuptext">To see more details or for contact options login is required!</p>
-    <a href="/login">login</a>
-    <a href="/signup">Signup</a>
+    <a class="alink"href="/login">login</a>
+    <a class="alink"href="/signup">Signup</a>
   </div>
   {{/if}}
    <div class="commentscontainer"></div>
@@ -68,10 +98,6 @@
             </div>
           </div>
         {{/each}}
-      
-    
-    {{else}}
-    <h3>There are no reviews for this art yet!</h3>
     {{/if}}
     </div>
   </div>

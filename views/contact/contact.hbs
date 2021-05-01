@@ -1,14 +1,20 @@
 <div class="contactcontainer">
 
   <h1>Contact the artist by email</h1>
-  <form action="/send-email" method="post" class="contactform">
+  <form action="/send-email" method="post" id="form-container" >
     <label for="email"></label hidden>
     <input class="passwordinput" type="hidden" name="email" value="{{data.owner.email}}" id="">
-    <label for="">Subject</label>
-    <input class="passwordinput" type="text" name="subject" required  placeholder="Type the subject of your email here...." >
-    <label for="">Message</label>
-    <textarea class="commentboxsignup" type="text" required cols="30" rows="10" name="message" placeholder="Type your email here...."></textarea>
-    <button type="submit">Submit</button>
+    <div class="passwordinput">
+      <label for="">Subject</label>
+      <input class="passwordinput" type="text" name="subject" required  placeholder="Subject goes here...." >
+    </div>
+    <div class="commentboxsignup">
+      <label for="">Message</label>
+      <textarea type="text" required cols="30" rows="10" name="message" placeholder="Type your email here...."></textarea>
+    </div>
+    <div class="commentbtn">
+      <button type="submit">Submit</button>
+    </div>
   </form>
 
 </div>

@@ -14,7 +14,7 @@ router.get("/", (req, res, next) => {
     User.aggregate([{ $sample: { size: 10 } }])
     .then((alluserresults) => {
       for (let i=0; i< alluserresults.length; i++){
-        if(alluserresults[i].usertype == "artist"){
+        if(alluserresults[i].usertype === "artist"){
           artistarr.push(alluserresults[i]) 
         }
       }
@@ -69,8 +69,19 @@ router.get("/art/:id/details", (req, res, next) => {
       for(let i=0; i<artResults.rating.length; i++){
         avg += artResults.rating[i];
       }
-      let calavg = avg/artResults.rating.length
-      let roundednr = Math.round(calavg *10)/10
+      let calavg = avg/artResults.rating.length;
+      let roundednr = Math.round(calavg *1)/1;
+      if(roundednr === 1){
+        artResults.onestar = true;
+      }else if (roundednr === 2){
+        artResults.twostar = true;
+      }else if (roundednr === 3){
+        artResults.treestar = true;
+      }else if(roundednr ===  4){
+        artResults.fourstar = true;
+      }else{
+        artResults.fivestar = true;
+      }
       res
         .status(200)
         .render("art/details", { artResults, user, contact: artResults.contact, roundednr });
@@ -145,6 +156,12 @@ router.get("/search-art",
     })
     .catch((findUpdateErr) => next(findUpdateErr))
   });
+
+  router.get("/forgot", 
+  (req, res, next) => {
+    res.status(200).render("forgot");
+  });
+
 
 
 module.exports = router;
