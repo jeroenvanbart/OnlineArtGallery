@@ -24,9 +24,6 @@ router.get("/", (req, res, next) => {
   .catch((findErr) => next(findErr));
   })
 
-
-
-
 router.get("/art", (req, res, next) => {
   Art.find({})
     .populate("owner contact")

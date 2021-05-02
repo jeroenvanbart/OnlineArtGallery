@@ -6,18 +6,15 @@ const Art = require("../models/Art.model");
 const nodemailer = require('nodemailer')
 
 
-
 router.post("/art/:artId/add-contact", (req, res, next) => {
   const { artId } = req.params;
   const { contact } = req.body;
   const { user } = req;
-
   Contact.create({ user: user._id, contact})
     .then((newContact) => {
       Art.findById(artId)
         .then((foundArt) => {
           foundArt.contact.push(newContact._id);
-
           return foundArt.save();
         })
         .then(() => {
@@ -28,8 +25,6 @@ router.post("/art/:artId/add-contact", (req, res, next) => {
     .catch((createContactErr) => next(createContactErr));
 });
 
-
-
 router.get("/:artid/contact", (req, res, next) => {
   const {artid} = req.params
   Art.findById(artid)
@@ -38,12 +33,10 @@ router.get("/:artid/contact", (req, res, next) => {
     res.render("contact/contact", {data})
   })
   .catch(error => console.log(error));
-  
 })
 
 router.post('/send-email', (req, res, next) => {
   let {user} = req;
-
   let { email, subject, message } = req.body;
   let transporter = nodemailer.createTransport({
     service: 'Gmail',

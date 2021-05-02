@@ -1,7 +1,6 @@
 <header>
   <h1 class="headerbox">ArtWall</h1>
   <h2 class="headerbox">Welcome to our Online Art Gallery</h2>
-  
 </header>
 
 <article class="indexhead">
@@ -10,12 +9,9 @@
 </article>
 
 
-
-
 <h2 class="title">Selected art for you</h2>
 
 <section class="allartcontainer">
-
   <article class="artcards">
     <h2>{{allArtResults.0.title}}</h2>
     <a href="/art/{{allArtResults.0._id}}/details">See Details</a>
@@ -43,11 +39,10 @@
 
 <hr>
 
- <h2 class="title">Selected artists for you</h2>
+<h2 class="title">Selected artists for you</h2>
 
 
 <section class="allartcontainer">
-    
   <article class="artcards">
     <h2>{{artistarr.0.fullName}}</h2>
     <a href="{{artistarr.0._id}}/details">See Details</a>
@@ -71,6 +66,4 @@
         <img src={{artistarr.2.profileImgUrl}} alt="">
     </div>
   </article>
-  
-
 </section>

@@ -4,17 +4,13 @@ const fileUploader = require("../configs/cloudinary.config");
 
 const Art = require("../models/Art.model");
 
-/* 
-  GET - Create Room Form 
-*/
+
 router.get("/create-art", (req, res) => {
   const { user } = req;
   res.status(200).render("art/create", { user });
 });
 
-/* 
-  POST - Save Form Data to Db
-*/
+
 router.post("/create-art" ,
 fileUploader.single("imageUrl"),(req, res, next) => {
   const { title, description, medium, price } = req.body;

@@ -64,7 +64,4 @@ router.post("/users/:userId/edit-profile-picture", fileUploader.single("profileI
 });
 
 
-
-// /users/{{id}}/details
-
 module.exports = router;
