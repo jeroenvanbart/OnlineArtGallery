@@ -15,7 +15,7 @@ const storage = new CloudinaryStorage({
     params:{
         folder: "onlineGallery",
         recource_type: "image",
-        allowed_formats: ["jpg", "png", "jpeg"],
+        allowed_formats: ["jpg", "png", "jpeg", "gif"],
         use_filename: true,
     },
 });
