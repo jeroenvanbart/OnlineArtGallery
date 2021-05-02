@@ -1,40 +1,42 @@
 <h2 class="headerbox">Login</h2>
 
-<form action="/login" method="POST" id="form-container">
-  <div class="emailinput">
-    <label for="email">Email adress</label>
-    <input id="email" type="email" name="email" placeholder="Type your email adress here...." required>
+<section class="formbox">
+  <form action="/login" method="POST" id="form-container">
+    <div class="emailinput">
+      <label for="email">Email adress</label>
+      <input id="email" type="email" name="email" placeholder="Type your email adress here...." required>
+    </div>
+
+    <div class="passwordinput">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Type your password here...." required>
+    </div>
+
+    {{#if message}}
+    <div class="error-message">
+      {{#each message}}
+      <p>{{this}}</p>
+      {{/each}}
+    </div>
+    {{/if}}
+
+
+    <div class="commentbtn">
+      <button>Login</button>
+    </div>
+
+  <div class="account-message">
+    <p>
+      Don't have an account yet?
+    </p>
+    <a href="/signup">Sign Up</a>
   </div>
 
-  <div class="passwordinput">
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Type your password here...." required>
+  <div class="account-message">
+    <p>
+      Forgot password?
+    </p>
+    <a href="/forgot">New</a>
   </div>
-
-  {{#if message}}
-  <div class="error-message">
-    {{#each message}}
-    <p>{{this}}</p>
-    {{/each}}
-  </div>
-  {{/if}}
-
-
-  <div class="commentbtn">
-    <button>Login</button>
-  </div>
-
-<div class="account-message">
-  <p>
-    Don't have an account yet?
-  </p>
-  <a href="/signup">Sign Up</a>
-</div>
-
-<div class="account-message">
-  <p>
-    Forgot password?
-  </p>
-  <a href="/forgot">Sign Up</a>
-</div>
-</form>
+  </form>
+</section>

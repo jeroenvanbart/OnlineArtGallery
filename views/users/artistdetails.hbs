@@ -1,5 +1,5 @@
 <h1 class="headerbox">Artist Profile</h1>
-
+{{#if artArr}}
 <article class="userprofilecard">
         <h2>{{artArr.0.owner.fullName}}</h2>
         <div>
@@ -7,11 +7,22 @@
         </div>
         <p>{{artArr.0.owner.bio}}</p>
 </article>
+{{else}}
+<article class="userprofilecard">
+        <h2>{{userArr.0.fullName}}</h2>
+        <div>
+            <img class="profileimage" src="{{userArr.0.profileImgUrl}}" alt="">
+        </div>
+        <p>{{userArr.0.bio}}</p>
+</article>
 
+{{/if}}
 <hr>
-
-<h2 class="headerbox">This Artists Works</h2>
-
+{{#if artArr}}
+<h2 class="title">{{artArr.0.owner.fullName}}'s Gallery</h2>
+{{else}}
+<h2 class="title">{{userArr.0.fullName}}'s Gallery</h2>
+{{/if}}
 <article class="profileArtcontainer">
 {{#if artArr}}
 {{#each artArr}}

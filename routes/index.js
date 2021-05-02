@@ -110,14 +110,20 @@ router.get("/:id/details", (req, res, next) => {
   const { id } = req.params;
   const{user} = req;
   const artArr = [];
+  const userArr=[];
   Art.find({})
   .populate("owner")
   .then((data) => {
+    User.findById(id)
+    .then((userdata) => {
+      userArr.push(userdata)
     for(let i=0;i<data.length; i++){
       if(id === data[i].owner.id){
-      artArr.push(data[i])
-    }}
-    res.status(200).render("users/artistdetails", {artArr, user})
+      artArr.push(data[i]) 
+    }}}).then(()=>{
+    res.status(200).render("users/artistdetails", {artArr, userArr, user})
+    }
+    )
     }).catch((findErr) => next(findErr));
 });
 
