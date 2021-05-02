@@ -153,7 +153,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   gap:20px;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   
 }
 .artcards{
@@ -300,7 +300,6 @@ width: 10vw;
   justify-content: space-evenly;
   gap:20px;
   flex-wrap: wrap;
-  flex-flow:wrap-reverse;
 }
 .profileartcards{
   width: 40vw;
