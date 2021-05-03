@@ -54,8 +54,7 @@ router.get("/users/:userId/edit-profile-picture",  (req, res, next) => {
 router.post("/users/:userId/edit-profile-picture", fileUploader.single("profileImgUrl"),
 (req, res, next) => {
   const { userId } = req.params;
-  const { path } = req.file;
-  
+  const { path } = req.file; 
   User.findByIdAndUpdate(userId, { profileImgUrl: path })
     .then(() => {
       res.redirect(`/profile`);

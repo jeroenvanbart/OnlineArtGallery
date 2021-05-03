@@ -34,7 +34,6 @@ router.post("/signup",
   const { path } = req.file;
     const passwordRegexFormat = /(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     const emailRegexFormat = /^\S+@\S+\.\S+$/;
-
   if (!fullName || !email || !password || !bio) {
     res
       .status(400)
@@ -48,15 +47,12 @@ router.post("/signup",
       });
       return;
     }
-
     if (!emailRegexFormat.test(email)) {
       res.status(200).render("auth/signup", {
         errorMessage: "Your email is not in the right format",
       });
       return;
     }
-
-
   User.findOne({ email })
     .then((userResult) => {
       if (userResult) {

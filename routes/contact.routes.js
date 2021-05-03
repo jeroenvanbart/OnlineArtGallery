@@ -46,7 +46,7 @@ router.post('/send-email', (req, res, next) => {
     }
   });
   transporter.sendMail({
-    from: '"My Artwall" <myawesome@project.com>',
+    from: '"My Artwall" <myArtWall@OnlineGallery.com>',
     to: email, 
     replyTo: user.email,
     subject: subject, 

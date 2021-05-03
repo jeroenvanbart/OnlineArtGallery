@@ -16,7 +16,6 @@ fileUploader.single("imageUrl"),(req, res, next) => {
   const { title, description, medium, price } = req.body;
   const { _id } = req.user;
   const { path } = req.file;
-
   Art.create({ title, description, medium, price, owner: _id, imageUrl: path })
     .then(() => {
       res.redirect("/profile");
@@ -27,7 +26,6 @@ fileUploader.single("imageUrl"),(req, res, next) => {
 
 router.get("/art/:artId", (req, res, next) => {
   const { artId } = req.params;
-
   Art.findById(artId)
     .populate("owner")
     .then((artResult) => {
